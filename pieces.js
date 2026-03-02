@@ -139,7 +139,7 @@ const pElementDisponible = document.createElement('p')
 pElementDisponible.innerText = "Pièces disponibles:";
 document.querySelector('.disponibles').appendChild(pElementDisponible).appendChild(disponiblesElement)
 
-
+//barre input"range" pour prix max
 const inputPrixMax = document.querySelector('#prix-max')
 inputPrixMax.addEventListener('input', function(){
     const piecesFiltrees = pieces.filter(function(piece){
