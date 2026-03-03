@@ -26,6 +26,11 @@ function genererPieces(pieces){
         descriptionElement.innerText = article.description ?? "Pas de description pour le moment.";
         const stockElement = document.createElement("p");
         stockElement.innerText = article.disponibilite ? "En stock" : "Rupture de stock";
+
+        //Code ajouté P3_1 bouton avis
+        const avisBouton = document.createElement("button");
+        avisBouton.dataset.id = article.id;
+        avisBouton.textContent = "Afficher les avis";
     
         // On rattache la balise article a la section Fiches
         sectionFiches.appendChild(pieceElement);
@@ -40,6 +45,8 @@ function genererPieces(pieces){
         pieceElement.appendChild(descriptionElement);
         pieceElement.appendChild(stockElement);
 
+        //Code aJouté en P3_1 bouton avis
+        pieceElement.appendChild(avisBouton);
     }
 }
 
@@ -55,7 +62,8 @@ boutonTrier.addEventListener("click", function () {
         return a.prix - b.prix;
     })
     document.querySelector(".fiches").innerHTML = ""
-    genererPieces(piecesOrdonnees)})
+    genererPieces(piecesOrdonnees)
+})
 
 
 const boutonFiltrer = document.querySelector(".btn-filtrer")
